@@ -17,7 +17,7 @@ function App() {
         <Routes>
 
            <Route path='/' element={<EmployeeProjectForm />} />
-          <Route path='/employeeLayout' element={<EmployeeCard />} />
+          <Route path='/EmployeeCard' element={<EmployeeCard />} />
           <Route path='*' element='Page not found' />
         </Routes>
       </Layout>
