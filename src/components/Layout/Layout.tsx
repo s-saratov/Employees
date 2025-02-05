@@ -6,7 +6,6 @@ import {
   NavContainer,
   LogoContainer,
   Main,
-  Footer,
   StyledNavLink
 } from './styles'
 import { LayoutProps } from './types'
@@ -21,25 +20,22 @@ function Layout({ children }: LayoutProps) {
         <LogoContainer onClick={() => navigate('/')}></LogoContainer>
         <NavContainer>
           <StyledNavLink
+            to='/'
+            style={
+              ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
+            }>
+            EmployeeProjectForm
+          </StyledNavLink>
+          <StyledNavLink
             to='/employeeCard'
             style={
               ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
             }>
             EmployeeCard
           </StyledNavLink>
-          <StyledNavLink
-            to='/employeeProjectForm'
-            style={
-              ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
-            }>
-            EmployeeProjectForm
-          </StyledNavLink>
         </NavContainer>
       </Header>
       <Main>{children}</Main>
-      <Footer>
-        <Link to='/'><LogoContainer></LogoContainer></Link>
-      </Footer>
     </LayoutComponent>
   )
 }

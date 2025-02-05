@@ -13,8 +13,8 @@ export const Header = styled.header`
   align-items: center;
   width: 100%;
   padding: 20px;
-  background-color: rebeccapurple;
-  color: white;
+  background-color: #ffffff;
+  color: #000000;
 `
 export const LogoContainer = styled.div`
  width: 70px;
@@ -32,22 +32,13 @@ export const NavContainer = styled.nav`
 export const StyledNavLink = styled(NavLink)`
  text-decoration: none;
  font-size: 20px;
- color: white;
+ color: #000000;
 `
 
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
+  background-color: #141837ff;
   flex: 1;
-`
-
-export const Footer = styled.footer`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-  background-color: rebeccapurple;
-  color: white;
 `
 
