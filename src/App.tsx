@@ -4,7 +4,7 @@ import GlobalStyles from './styles/GlobalStyles'
 import Layout from './components/Layout/Layout'
 
  import EmployeeCard from './Pages/EmployeeCard/EmployeeCard'
- import EmployeeProjectForm from './Pages/EmployeeProjectForm/EmployeeProjectForm'
+ import EmployeeProjectForm from './pages/EmployeeProjectForm/EmployeeProjectForm'
 
 
 function App() {
