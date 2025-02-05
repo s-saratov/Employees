@@ -1,4 +1,4 @@
 function EmployeeCard (){
-return(0)
+return("EmployeeCard")
 }
 export default EmployeeCard;
