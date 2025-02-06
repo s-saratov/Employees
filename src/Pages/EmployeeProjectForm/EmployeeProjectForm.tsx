@@ -4,8 +4,8 @@ import { useFormik } from "formik";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 
-import { EmployeeFormValues } from "./type";
 import { EmployeeProjectFormContainer, ImputWrapper } from "./styles";
+import { EmployeeFormValues } from "./type";
 
 const employeeFormFields = [
   { name: "name", label: "Name*", placeholder: "Enter your name" },

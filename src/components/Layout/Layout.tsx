@@ -27,7 +27,7 @@ function Layout({ children }: LayoutProps) {
             EmployeeProjectForm
           </StyledNavLink>
           <StyledNavLink
-            to='/employeeCard'
+            to='/EmployeeCard'
             style={
               ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
             }>
