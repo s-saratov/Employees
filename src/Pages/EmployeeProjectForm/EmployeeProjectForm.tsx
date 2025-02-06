@@ -11,11 +11,7 @@ const employeeFormFields = [
   { name: "name", label: "Name*", placeholder: "Enter your name" },
   { name: "surname", label: "Surname*", placeholder: "Enter your surname" },
   { name: "age", label: "Age*", placeholder: "Enter your age" },
-  {
-    name: "jobPosition",
-    label: "Job position*",
-    placeholder: "Enter your job position",
-  },
+  { name: "jobPosition", label: "Job position", placeholder: "Enter your job position"},
 ];
 
 function EmployeeProjectForm() {
@@ -31,7 +27,8 @@ function EmployeeProjectForm() {
       .required("Field <age> is requaired")
       .min(18, "Age must be at least 18 years old")
       .max(80, "Age must be at most 80 years old"),
-    jobPosition: Yup.string().required().max(30, "Max 30 symbols"),
+    jobPosition: Yup.string()
+    .max(30, "Max 30 symbols"),
   });
 
   const formik = useFormik({
