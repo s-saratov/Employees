@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import GlobalStyles from './styles/GlobalStyles'
 import Layout from './components/Layout/Layout'
 
+import { EmployeeProvider } from "./pages/EmployeeCard/EmployeeContext";
  import EmployeeCard from './pages/EmployeeCard/EmployeeCard'
  import EmployeeProjectForm from './pages/EmployeeProjectForm/EmployeeProjectForm'
 import EmployeeFormPage from 'pages/EmployeeFormPage/EmployeeFormPage'
@@ -20,6 +21,8 @@ function App() {
            <Route path='/' element={<EmployeeFormPage />} />
           <Route path='/EmployeeCard' element={<EmployeeCard />} />
           <Route path='*' element='Page not found' />
+
+    
         </Routes>
       </Layout>
 
