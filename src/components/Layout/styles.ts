@@ -2,9 +2,12 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom'
 
 export const LayoutComponent = styled.div`
- display: flex;
- flex-direction: column;
- flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw; // Исправлено с 100% на vw
+  overflow-x: hidden; // Добавлено
+  background-color: #d5d2f7;
 `
 
 export const Header = styled.header`
@@ -13,7 +16,7 @@ export const Header = styled.header`
   align-items: center;
   width: 100%;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #d5d2f7;
   color: #000000;
 `
 export const LogoContainer = styled.div`
@@ -38,7 +41,10 @@ export const StyledNavLink = styled(NavLink)`
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
-  background-color: #141837ff;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  min-height: calc(100vh - 110px);
 `
 
