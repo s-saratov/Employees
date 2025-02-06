@@ -17,7 +17,7 @@ function Layout({ children }: LayoutProps) {
     <LayoutComponent>
       <Header>
         {/* 2 способ перехода на главную страницу при клике на логотип */}
-        <LogoContainer onClick={() => navigate('/')}></LogoContainer>
+        <LogoContainer onClick={() => navigate('/')}>App Logo</LogoContainer>
         <NavContainer>
           <StyledNavLink
             to='/'
