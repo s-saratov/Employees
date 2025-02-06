@@ -4,8 +4,8 @@ export const EmployeeProjectFormContainer = styled.form`
 display: flex;
 flex-direction: column;
 gap: 10px;
-padding: 50px;
-width: 500px;
+padding: 40px;
+width: 530px;
 min-height: 350px;
 /* max-height: fit-content; */
 background-color: white;
@@ -16,7 +16,7 @@ border-radius: 4px;
 export const ImputWrapper = styled.div `
 display: flex;
 flex-direction: column;
-gap: 10px;
+gap: 4px;
 `
 
 
