@@ -31,7 +31,8 @@ function EmployeeProjectForm() {
       .required("Field <age> is requaired")
       .min(18, "Age must be at least 18 years old")
       .max(80, "Age must be at most 80 years old"),
-    jobPosition: Yup.string().required().max(30, "Max 30 symbols"),
+    jobPosition: Yup.string()
+    .max(30, "Max 30 symbols"),
   });
 
   const formik = useFormik({
