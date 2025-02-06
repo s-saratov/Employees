@@ -7,7 +7,7 @@ export const LayoutComponent = styled.div`
   min-height: 100vh;
   width: 100vw; // Исправлено с 100% на vw
   overflow-x: hidden; // Добавлено
-  background-color: #d5d2f7;
+  background-color: #051e2b;
 `
 
 export const Header = styled.header`
@@ -16,26 +16,24 @@ export const Header = styled.header`
   align-items: center;
   width: 100%;
   padding: 20px;
-  background-color: #d5d2f7;
+  background-color: white;
   color: #000000;
+  padding:30px
 `
 export const LogoContainer = styled.div`
- width: 70px;
- height: 70px;
- background-color: white;
  border-radius: 50%;
- cursor: pointer;
 `
 
 export const NavContainer = styled.nav`
  display: flex;
- gap: 15px;
+ gap: 25px;
 `
 
 export const StyledNavLink = styled(NavLink)`
  text-decoration: none;
  font-size: 20px;
  color: #000000;
+ padding: 10px;
 `
 
 export const Main = styled.main`
@@ -44,7 +42,7 @@ export const Main = styled.main`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 20px;
+  padding: 50px;
   min-height: calc(100vh - 110px);
 `
 
