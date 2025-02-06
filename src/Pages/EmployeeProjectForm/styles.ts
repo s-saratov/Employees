@@ -1,20 +1,18 @@
 import styled from '@emotion/styled';
 
 export const EmployeeProjectFormContainer = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 30px;
-  padding: 60px;
-  width: 100%;
-  max-width: 800px;
-  height: calc(100vh - 110px);
-  background-color: white;
-  border: 2px solid #f9f9fca6;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-`
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 50px;
+width: 500px;
+min-height: 350px;
+/* max-height: fit-content; */
+background-color: white;
+border: 2px solid #020206a6;
+border-radius: 4px;
 
+`
 export const ImputWrapper = styled.div `
 display: flex;
 flex-direction: column;

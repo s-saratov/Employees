@@ -5,6 +5,7 @@ import Layout from './components/Layout/Layout'
 
  import EmployeeCard from './pages/EmployeeCard/EmployeeCard'
  import EmployeeProjectForm from './pages/EmployeeProjectForm/EmployeeProjectForm'
+import EmployeeFormPage from 'pages/EmployeeFormPage/EmployeeFormPage'
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <Layout>
         <Routes>
 
-           <Route path='/' element={<EmployeeProjectForm />} />
+           <Route path='/' element={<EmployeeFormPage />} />
           <Route path='/EmployeeCard' element={<EmployeeCard />} />
           <Route path='*' element='Page not found' />
         </Routes>
