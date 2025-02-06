@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import GlobalStyles from './styles/GlobalStyles'
 import Layout from './components/Layout/Layout'
 
- import EmployeeCard from './Pages/EmployeeCard/EmployeeCard'
+ import EmployeeCard from './pages/EmployeeCard/EmployeeCard'
  import EmployeeProjectForm from './pages/EmployeeProjectForm/EmployeeProjectForm'
 
 
