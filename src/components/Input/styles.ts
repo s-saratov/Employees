@@ -9,7 +9,7 @@ export const InputContainer = styled.div`
 
 export const Label = styled.label`
   font-size: 16px;
-  color: #6f6f6f;
+  color: #0b0a0a;
 `
 
 export const InputElement = styled.input`
@@ -17,14 +17,16 @@ export const InputElement = styled.input`
   height: 50px;
   padding: 12px;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid #f5f0f0;
   border-radius: 4px;
   font-size: 16px;
-
+  background-color: white;
+  color: black; /* Добавьте эту строку для установки цвета текста */
+  
   &::placeholder {
-  color: #a19f9f;
-}
-`
+    color: #090808; /* Цвет текста плейсхолдера */
+  }
+`;
 
 export const ErrorMessage = styled.div`
   height: 18px;
