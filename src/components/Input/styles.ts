@@ -9,7 +9,7 @@ export const InputContainer = styled.div`
 
 export const Label = styled.label`
   font-size: 16px;
-  color: #0b0a0a;
+  color: #0b0a0aa4;
 `
 
 export const InputElement = styled.input`
@@ -24,7 +24,7 @@ export const InputElement = styled.input`
   color: black; /* Добавьте эту строку для установки цвета текста */
   
   &::placeholder {
-    color: #090808; /* Цвет текста плейсхолдера */
+    color: #090808a1; /* Цвет текста плейсхолдера */
   }
 `;
 
