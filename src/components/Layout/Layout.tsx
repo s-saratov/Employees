@@ -1,43 +1,24 @@
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import {
-  LayoutComponent,
-  Header,
-  NavContainer,
-  LogoContainer,
-  Main,
-  StyledNavLink
-} from './styles'
-import { LayoutProps } from './types'
-
-function Layout({ children }: LayoutProps) {
-  const navigate = useNavigate();
-
-  return (
-    <LayoutComponent>
-      <Header>
-        {/* 2 способ перехода на главную страницу при клике на логотип */}
-        <LogoContainer onClick={() => navigate('/')}>App Logo</LogoContainer>
-        <NavContainer>
-          <StyledNavLink
-            to='/'
-            style={
-              ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
-            }>
-            EmployeeProjectForm
-          </StyledNavLink>
-          <StyledNavLink
-            to='/EmployeeCard'
-            style={
-              ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
-            }>
-            EmployeeCard
-          </StyledNavLink>
-        </NavContainer>
-      </Header>
-      <Main>{children}</Main>
-    </LayoutComponent>
-  )
+interface LayoutProps {
+  children: React.ReactNode;
 }
 
-export default Layout
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+  return (
+    <div>
+      <header style={{ background: '#f0f0f0', padding: '10px' }}>
+        <nav>
+          <Link to="/create-employee" style={{ marginRight: '15px', textDecoration: 'none', color: '#007bff' }}>Create Employee</Link>
+          <Link to="/employee" style={{ textDecoration: 'none', color: '#007bff' }}>Employee</Link>
+        </nav>
+      </header>
+      <main style={{ padding: '20px' }}>
+        {children}
+      </main>
+    </div>
+  );
+};
+
+export default Layout;

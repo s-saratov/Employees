@@ -1,30 +1,45 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-import GlobalStyles from './styles/GlobalStyles'
-import Layout from './components/Layout/Layout'
-
- import EmployeeCard from './pages/EmployeeCard/EmployeeCard'
- import EmployeeProjectForm from './pages/EmployeeProjectForm/EmployeeProjectForm'
-import EmployeeFormPage from 'pages/EmployeeFormPage/EmployeeFormPage'
-
+import React, { useState } from 'react';
+import { EmployeeProvider } from './Pages/EmployeeContext/EmployeeContext';
+import EmployeeFormPage from './pages/EmployeeFormPage/EmployeeFormPage';
+import EmployeeCard from './Pages/EmployeeCard/EmployeeCard';
+import './styles/GlobalStyles.css';
 
 function App() {
+  const [activePage, setActivePage] = useState('create');
 
   return (
-
-    <BrowserRouter>
-      <GlobalStyles />
-      <Layout>
-        <Routes>
-
-           <Route path='/' element={<EmployeeFormPage />} />
-          <Route path='/EmployeeCard' element={<EmployeeCard />} />
-          <Route path='*' element='Page not found' />
-        </Routes>
-      </Layout>
-
-    </BrowserRouter>
-  )
+    <EmployeeProvider>
+      <div className="app-container">
+        <header className="app-header">
+          <nav>
+            <a
+              href="#"
+              className={activePage === 'create' ? 'active' : ''}
+              onClick={(e) => {
+                e.preventDefault();
+                setActivePage('create');
+              }}
+            >
+              Create Employee
+            </a>
+            <a
+              href="#"
+              className={activePage === 'employee' ? 'active' : ''}
+              onClick={(e) => {
+                e.preventDefault();
+                setActivePage('employee');
+              }}
+            >
+              Employee
+            </a>
+          </nav>
+        </header>
+        <main className="app-main">
+          {activePage === 'create' ? <EmployeeFormPage /> : <EmployeeCard />}
+        </main>
+      </div>
+    </EmployeeProvider>
+  );
 }
 
-export default App
+export default App;
