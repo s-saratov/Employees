@@ -3,9 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles";
 import Layout from "./components/Layout/Layout";
 
-import EmployeeCard from "./pages/EmployeeCard/EmployeeCard";
+
 import EmployeeProjectForm from "./pages/EmployeeProjectForm/EmployeeProjectForm";
 import EmployeeFormPage from "pages/EmployeeFormPage/EmployeeFormPage";
+import EmployeeCardPage from "pages/EmployeeCardPage/EmployeeCardPage";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<EmployeeFormPage />} />
-          <Route path="/employeecard" element={<EmployeeCard />} />
+          <Route path="/employeecards" element={<EmployeeCardPage />} />
           <Route path="*" element="Page not found" />
         </Routes>
       </Layout>

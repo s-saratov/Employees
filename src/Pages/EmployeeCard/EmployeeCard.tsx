@@ -6,6 +6,7 @@ import {
   Label,
   Value,
   Message,
+  CardEmployee,
 } from "./styles";
 import { EmployeeDataContext } from "components/Layout/Layout";
 
@@ -14,29 +15,26 @@ function EmployeeCard() {
   const { employee, setEmployeeData } = useContext(EmployeeDataContext);
 
   return (
-    <CardContainer>
-      <CardContent>
+    <CardEmployee>
+      <InfoRow>
+        <Label>Name:</Label>
+        <Value>{employee?.name}</Value>
+      </InfoRow>
+      <InfoRow>
+        <Label>Surname:</Label>
+        <Value>{employee?.surname}</Value>
+      </InfoRow>
+      <InfoRow>
+        <Label>Age:</Label>
+        <Value>{employee?.age}</Value>
+      </InfoRow>
+      {employee?.jobPosition && (
         <InfoRow>
-          <Label>Name:</Label>
-          <Value>{employee?.name}</Value>
+          <Label>Job Position:</Label>
+          <Value>{employee?.jobPosition}</Value>
         </InfoRow>
-        <InfoRow>
-          <Label>Surname:</Label>
-          <Value>{employee?.surname}</Value>
-        </InfoRow>
-        <InfoRow>
-          <Label>Age:</Label>
-          <Value>{employee?.age}</Value>
-        </InfoRow>
-        {employee?.jobPosition && (
-          <InfoRow>
-            <Label>Job Position:</Label>
-            <Value>{employee?.jobPosition}</Value>
-          </InfoRow>
-        )}
-
-      </CardContent>
-    </CardContainer>
+      )}
+    </CardEmployee>
   );
 }
 
