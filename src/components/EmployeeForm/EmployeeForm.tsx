@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import { EmployeeFormContainer, Title, InputsContainer } from "./styles";
-import { LoginFormValues } from "./types";
+import { LoginFormValues } from "components/LoginForm/types";
 
 function EmployeeForm() {
   const validationSchema = Yup.object().shape({

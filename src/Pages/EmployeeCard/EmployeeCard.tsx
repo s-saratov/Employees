@@ -1,34 +1,40 @@
-import { CardContainer, CardContent, InfoRow, Label, Value, Message } from './styles';
-import { useEmployeeContext } from '../EmployeeContext/EmployeeContext';
+import { useContext } from "react";
+import {
+  CardContainer,
+  CardContent,
+  InfoRow,
+  Label,
+  Value,
+  Message,
+} from "./styles";
+import { EmployeeDataContext } from "components/Layout/Layout";
 
 function EmployeeCard() {
-  const { employee } = useEmployeeContext();
-
-  if (!employee) {
-    return <Message>No employee data available. Please create an employee first.</Message>;
-  }
+  // Деструктуризируем объект, приходящий с помощью EmployeeDataContext
+  const { employee, setEmployeeData } = useContext(EmployeeDataContext);
 
   return (
     <CardContainer>
       <CardContent>
         <InfoRow>
           <Label>Name:</Label>
-          <Value>{employee.name}</Value>
+          <Value>{employee?.name}</Value>
         </InfoRow>
         <InfoRow>
           <Label>Surname:</Label>
-          <Value>{employee.surname}</Value>
+          <Value>{employee?.surname}</Value>
         </InfoRow>
-        {employee.age && (
+        <InfoRow>
+          <Label>Age:</Label>
+          <Value>{employee?.age}</Value>
+        </InfoRow>
+        {employee?.jobPosition && (
           <InfoRow>
-            <Label>Age:</Label>
-            <Value>{employee.age}</Value>
+            <Label>Job Position:</Label>
+            <Value>{employee?.jobPosition}</Value>
           </InfoRow>
         )}
-        <InfoRow>
-          <Label>Job Position:</Label>
-          <Value>{employee.jobPosition}</Value>
-        </InfoRow>
+
       </CardContent>
     </CardContainer>
   );

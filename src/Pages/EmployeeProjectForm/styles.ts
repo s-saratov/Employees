@@ -13,7 +13,7 @@ border: 2px solid #020206a6;
 border-radius: 4px;
 
 `
-export const ImputWrapper = styled.div `
+export const InputWrapper = styled.div `
 display: flex;
 flex-direction: column;
 gap: 4px;

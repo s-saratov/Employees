@@ -3,14 +3,12 @@ import { EmployeeFormPageWrapper } from "./styles";
 import { useEmployeeContext } from '../../Pages/EmployeeContext/EmployeeContext';
 import { Link } from 'react-router-dom';
 
-function EmployeeFormPage (){
-  const {  } = useEmployeeContext();
-  return(
+function EmployeeFormPage() {
+  return (
     <EmployeeFormPageWrapper>
       <EmployeeProjectForm />
-      
     </EmployeeFormPageWrapper>
-  )
+  );
 }
 
-export default EmployeeFormPage
+export default EmployeeFormPage;
