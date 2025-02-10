@@ -1,5 +1,7 @@
-export interface LoginFormValues {
-  name: string,
-  age: string,
-  job?: string
+export interface EmployeeDataTypes {
+  // id: string;
+  name: string;
+  surname: string;
+  age: number;
+  jobPosition: string;
 }

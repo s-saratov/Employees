@@ -4,8 +4,12 @@ import { useFormik } from "formik";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 
-import { EmployeeProjectFormContainer, ImputWrapper } from "./styles";
+import { EmployeeProjectFormContainer, InputWrapper } from "./styles";
 import { EmployeeFormValues } from "./type";
+
+import { useEffect, useContext } from "react";
+import { EmployeeDataContext } from "components/Layout/Layout";
+import { EmployeeDataTypes } from "components/EmployeeForm/types";
 
 const employeeFormFields = [
   { name: "name", label: "Name*", placeholder: "Enter your name" },
@@ -16,34 +20,47 @@ const employeeFormFields = [
     label: "Job position",
     placeholder: "Enter your job position",
   },
-
 ];
 
 function EmployeeProjectForm() {
+  const employee = useContext(EmployeeDataContext);
+  // console.log(employee);
+
+  // Извлекаем из контекста функцию установления данных рабоника
+  const { setEmployeeData } = employee;
+
   const validationSchema = Yup.object().shape({
     name: Yup.string()
-      .required("Field <age> is requaired")
+      .required("Field <age> is required")
       .min(2, "Min 2 symbols")
       .max(50, "Max 50 symbols"),
     surname: Yup.string()
-      .required("Field <age> is requaired")
+      .required("Field <age> is required")
       .max(15, "Max 15 symbols"),
     age: Yup.number()
-      .required("Field <age> is requaired")
+      .required("Field <age> is required")
       .min(18, "Age must be at least 18 years old")
       .max(80, "Age must be at most 80 years old"),
     jobPosition: Yup.string().max(30, "Max 30 symbols"),
-
   });
 
   const formik = useFormik({
-    initialValues: employeeFormFields.reduce((result, field) => {
-      result[field.name] = "";
-      return result;
-    }, {} as EmployeeFormValues),
+    initialValues: {
+      name: "",
+      surname: "",
+      age: "",
+      jobPosition: "",
+    } as EmployeeDataTypes,
     validationSchema,
     validateOnChange: false,
-    onSubmit: () => {
+    onSubmit: (formInputValues: EmployeeDataTypes) => {
+      // Устанавливаем в state данные формы
+      setEmployeeData({
+        name: formInputValues.name,
+        surname: formInputValues.surname,
+        age: formInputValues.age,
+        jobPosition: formInputValues.jobPosition,
+      });
       formik.resetForm();
     },
   });
@@ -64,14 +81,10 @@ function EmployeeProjectForm() {
 
   return (
     <EmployeeProjectFormContainer>
-      <ImputWrapper> {inputs}</ImputWrapper>
-      <Button 
-      name="Create" 
-      type="submit" 
-      onClick={formik.handleSubmit} />
+      <InputWrapper> {inputs}</InputWrapper>
+      <Button name="Create" type="submit" onClick={formik.handleSubmit} />
     </EmployeeProjectFormContainer>
   );
-
 }
 
 export default EmployeeProjectForm;
