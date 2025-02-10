@@ -34,6 +34,7 @@ function EmployeeCard() {
             <Value>{employee?.jobPosition}</Value>
           </InfoRow>
         )}
+
       </CardContent>
     </CardContainer>
   );
