@@ -44,7 +44,7 @@ function Layout({ children }: LayoutProps) {
                 textDecoration: isActive ? "underline" : "none",
               })}
             >
-              EmployeeProjectForm
+              Create Employee
             </StyledNavLink>
             <StyledNavLink
               to="/employeecards"
@@ -52,7 +52,7 @@ function Layout({ children }: LayoutProps) {
                 textDecoration: isActive ? "underline" : "none",
               })}
             >
-              EmployeeCard
+              Employee
             </StyledNavLink>
           </NavContainer>
         </Header>

@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 export const EmployeeProjectFormContainer = styled.form`
 display: flex;
 flex-direction: column;
-gap: 10px;
-padding: 40px;
-width: 530px;
+gap: 30px;
+padding: 60px;
+width: 590px;
 min-height: 350px;
 /* max-height: fit-content; */
 background-color: white;

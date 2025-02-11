@@ -1,7 +1,5 @@
 import { useContext } from "react";
 import {
-  CardContainer,
-  CardContent,
   InfoRow,
   Label,
   Value,
@@ -13,6 +11,10 @@ import { EmployeeDataContext } from "components/Layout/Layout";
 function EmployeeCard() {
   // Деструктуризируем объект, приходящий с помощью EmployeeDataContext
   const { employee, setEmployeeData } = useContext(EmployeeDataContext);
+
+if(!employee) return (
+  <Message>No employee data available. Please create an employee first.</Message>
+)
 
   return (
     <CardEmployee>
