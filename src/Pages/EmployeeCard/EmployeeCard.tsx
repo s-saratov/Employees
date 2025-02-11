@@ -10,7 +10,7 @@ import { EmployeeDataContext } from "components/Layout/Layout";
 
 function EmployeeCard() {
   // Деструктуризируем объект, приходящий с помощью EmployeeDataContext
-  const { employee, setEmployeeData } = useContext(EmployeeDataContext);
+  const { employee } = useContext(EmployeeDataContext);
 
 if(!employee) return (
   <Message>No employee data available. Please create an employee first.</Message>

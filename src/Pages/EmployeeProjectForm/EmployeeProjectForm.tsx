@@ -5,22 +5,12 @@ import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 
 import { EmployeeProjectFormContainer, InputWrapper } from "./styles";
-import { EmployeeFormValues } from "./type";
+import { employeeFormFields } from "./types";
 
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import { EmployeeDataContext } from "components/Layout/Layout";
 import { EmployeeDataTypes } from "components/EmployeeForm/types";
-
-const employeeFormFields = [
-  { name: "name", label: "Name*", placeholder: "Enter your name" },
-  { name: "surname", label: "Surname*", placeholder: "Enter your surname" },
-  { name: "age", label: "Age*", placeholder: "Enter your age" },
-  {
-    name: "jobPosition",
-    label: "Job position",
-    placeholder: "Enter your job position",
-  },
-];
+import { v4 } from "uuid";
 
 function EmployeeProjectForm() {
   const employee = useContext(EmployeeDataContext);
@@ -50,31 +40,34 @@ function EmployeeProjectForm() {
       surname: "",
       age: "",
       jobPosition: "",
-    } as EmployeeDataTypes,
+    },
     validationSchema,
     validateOnChange: false,
     onSubmit: (formInputValues: EmployeeDataTypes) => {
       // Устанавливаем в state данные формы
-      setEmployeeData({
-        name: formInputValues.name,
-        surname: formInputValues.surname,
-        age: formInputValues.age,
-        jobPosition: formInputValues.jobPosition,
-      });
+      // setEmployeeData({
+      //   name: formInputValues.name,
+      //   surname: formInputValues.surname,
+      //   age: formInputValues.age,
+      //   jobPosition: formInputValues.jobPosition,
+      // });
+      setEmployeeData(formInputValues);
       formik.resetForm();
     },
   });
 
-  const inputs = employeeFormFields.map((field) => {
+  const inputs: any = employeeFormFields.map((field) => {
+    console.log(field);
+    const name: string = field.name;
     return (
       <Input
-        key={field.name}
+        key={v4()}
         name={field.name}
         label={field.label}
         placeholder={field.placeholder}
-        value={formik.values[field.name]}
+        value={formik.values[name as keyof typeof formik.values]}
         onChange={formik.handleChange}
-        error={formik.errors[field.name]}
+        error={formik.errors[name as keyof typeof formik.values]}
       />
     );
   });

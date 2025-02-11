@@ -2,6 +2,6 @@ export interface EmployeeDataTypes {
   // id: string;
   name: string;
   surname: string;
-  age: number;
+  age: string;
   jobPosition: string;
 }
